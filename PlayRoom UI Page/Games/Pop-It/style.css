@@ -1,0 +1,9 @@
+.game-target{
+    background-color: red;
+    height: 300px;
+    width: 50%;
+}
+
+.final-score{
+    display: none;
+}
