@@ -16,14 +16,14 @@ function createTarget() {
     let newdiv = document.createElement("div");
     newdiv.classList.add('target');
     let randomposition = Math.random() * (targetgen.clientWidth - newdiv.clientWidth);
-    let randomposition1 = Math.random() * (targetgen.clientHeight - newdiv.clientHeight);   
+    let randomposition1 = Math.random() * (targetgen.clientHeight - newdiv.clientHeight);
 
     newdiv.style.left = `${randomposition}px`;
     newdiv.style.top = `${randomposition1}px`;
 
     targetgen.appendChild(newdiv);
     newdiv.addEventListener("click", () => {
-
+        
         score++;
         scoreelement.textContent = score;
         // console.log(scoreelement); 
