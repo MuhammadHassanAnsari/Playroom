@@ -1,9 +1,9 @@
-body{
+body {
     background-color: black;
 }
 
 
-.container{
+.container {
     border: 2px solid red;
     height: 300px;
     width: 15%;
@@ -13,15 +13,15 @@ body{
     flex-wrap: wrap;
 }
 
-.box{
+.box {
     height: 50px;
     width: 50px;
     border-radius: 100%;
     background-color: #fff;
 }
 
-.target{
-    border: 2px solid red;
-    height: 500px;
-    width: 40%;
+.target-pro {
+    background-color: red;
+    height: 18px;
+    width: 14px;
 }

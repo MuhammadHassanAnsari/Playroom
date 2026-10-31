@@ -1,8 +1,8 @@
-
-
 let startbtn = document.querySelector(".start");
 let timevalue = document.querySelector(".timer");
 let scorevalue = document.querySelector(".score");
+let selectTarget = document.querySelectorAll(".box");
+let maintargetBox = document.querySelector(".container");
 
 let timer = 5;
 let score = 0;
@@ -10,9 +10,25 @@ let isrunning = false;
 let timevalue1;
 
 
-function createTarget(){
+function createTarget() {
     let newdiv = document.createElement("div");
-    newdiv.classList.add('target');   
+    newdiv.classList.add('target-pro');
+
+    
+    let random = Math.random()*5;
+    let random1 = Math.floor(random);
+    
+  
+    selectTarget[random1].appendChild(newdiv);
+    
+    newdiv.addEventListener("click", ()=>{
+        score++;
+        scorevalue.textContent = score;
+
+        newdiv.remove();
+        createTarget();
+    })
+
 }
 
 
@@ -24,9 +40,10 @@ function timestart() {
         timevalue.textContent = timer;
 
 
-        if (timer == 0) {
+        if (timer === 0) {
             clearInterval(timevalue1);
             isrunning = false;
+
 
         }
 
@@ -41,11 +58,12 @@ startbtn.addEventListener("click", () => {
     }
 
     if (isrunning === true) {
-        return
+        return;
     }
 
     isrunning = true;
 
     timestart();
+    createTarget();
 
 })
